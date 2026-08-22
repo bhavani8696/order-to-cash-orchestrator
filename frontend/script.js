@@ -1,8 +1,17 @@
 async function processOrder() {
 
-    const orderId = document.getElementById("orderId").value;
-    const customerName = document.getElementById("customerName").value;
-    const customerEmail = document.getElementById("customerEmail").value;
+    const orderId = document.getElementById("orderId").value.trim();
+    const customerName = document.getElementById("customerName").value.trim();
+    const customerEmail = document.getElementById("customerEmail").value.trim();
+
+    // ==========================================
+    // VALIDATION
+    // ==========================================
+
+    if (!orderId || !customerName || !customerEmail) {
+        alert("Please fill in Order ID, Customer Name, and Customer Email.");
+        return;
+    }
 
     const orderData = {
         order_id: orderId,
@@ -13,6 +22,7 @@ async function processOrder() {
         // P001 = Laptop
         // Available quantity = 10
         // Requested quantity = 1
+
         items: [
             {
                 product_id: "P001",
@@ -32,8 +42,12 @@ async function processOrder() {
 
     try {
 
+        // ==========================================
+        // CALL DEPLOYED FASTAPI BACKEND
+        // ==========================================
+
         const response = await fetch(
-            "http://127.0.0.1:8000/process-order",
+            "https://order-to-cash-orchestrator.onrender.com/process-order",
             {
                 method: "POST",
                 headers: {
@@ -44,16 +58,29 @@ async function processOrder() {
         );
 
         if (!response.ok) {
-            throw new Error(
-                "Backend returned HTTP " + response.status
-            );
+            let errorMessage = "Backend returned HTTP " + response.status;
+
+            try {
+                const errorData = await response.json();
+
+                if (errorData.detail) {
+                    errorMessage = errorData.detail;
+                }
+            } catch (e) {
+                // Ignore JSON parsing error
+            }
+
+            throw new Error(errorMessage);
         }
 
         const data = await response.json();
 
         console.log("Backend response:", data);
 
-        // Show result section
+        // ==========================================
+        // SHOW RESULT SECTION
+        // ==========================================
+
         document
             .getElementById("result")
             .classList
@@ -91,7 +118,10 @@ async function processOrder() {
                 "#16a34a";
 
 
-            // Validation
+            // ==========================================
+            // VALIDATION AGENT
+            // ==========================================
+
             document.getElementById("validationIcon").textContent =
                 "✓";
 
@@ -102,7 +132,10 @@ async function processOrder() {
                 "passed";
 
 
-            // Inventory
+            // ==========================================
+            // INVENTORY AGENT
+            // ==========================================
+
             document.getElementById("inventoryIcon").textContent =
                 "✓";
 
@@ -113,7 +146,10 @@ async function processOrder() {
                 "passed";
 
 
-            // Invoice
+            // ==========================================
+            // INVOICE AGENT
+            // ==========================================
+
             document.getElementById("invoiceIcon").textContent =
                 "✓";
 
@@ -124,10 +160,12 @@ async function processOrder() {
                 "passed";
 
 
-            // Payment Risk
+            // ==========================================
+            // PAYMENT RISK AGENT
+            // ==========================================
+
             document.getElementById("paymentIcon").textContent =
                 "✓";
-
 
             let riskLevel = "LOW";
 
@@ -150,7 +188,10 @@ async function processOrder() {
                 riskLevel;
 
 
-            // 4 agents completed
+            // ==========================================
+            // AGENTS EXECUTED
+            // ==========================================
+
             document.getElementById("agentsExecuted").textContent =
                 "4 / 4";
         }
@@ -180,9 +221,9 @@ async function processOrder() {
                 "#dc2626";
 
 
-            // --------------------------------------
+            // ==========================================
             // VALIDATION PASSED
-            // --------------------------------------
+            // ==========================================
 
             document.getElementById("validationIcon").textContent =
                 "✓";
@@ -194,9 +235,9 @@ async function processOrder() {
                 "passed";
 
 
-            // --------------------------------------
+            // ==========================================
             // INVENTORY FAILED
-            // --------------------------------------
+            // ==========================================
 
             if (failedAgent === "Inventory Agent") {
 
@@ -211,6 +252,7 @@ async function processOrder() {
 
 
                 // Invoice not executed
+
                 document.getElementById("invoiceIcon").textContent =
                     "—";
 
@@ -222,6 +264,7 @@ async function processOrder() {
 
 
                 // Payment not executed
+
                 document.getElementById("paymentIcon").textContent =
                     "—";
 
@@ -231,6 +274,8 @@ async function processOrder() {
                 document.getElementById("risk").className =
                     "not-executed";
 
+
+                // Agents executed
 
                 document.getElementById("agentsExecuted").textContent =
                     "2 / 4";
@@ -251,8 +296,8 @@ async function processOrder() {
 
         alert(
             "Could not connect to backend.\n\n" +
-            "Make sure FastAPI is running on:\n" +
-            "http://127.0.0.1:8000"
+            "Please check the deployed backend:\n" +
+            "https://order-to-cash-orchestrator.onrender.com"
         );
 
     }
