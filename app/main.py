@@ -16,12 +16,10 @@ app = FastAPI(
 )
 
 
-# Allow deployed frontend to communicate with FastAPI
+# Allow frontend to communicate with FastAPI
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://order-to-cash-orchestrator-1.onrender.com"
-    ],
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
