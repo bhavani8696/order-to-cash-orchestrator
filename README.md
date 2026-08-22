@@ -33,23 +33,17 @@ A central **Order Orchestrator** coordinates multiple specialized agents.
 ---
 .
 
-# 🔗 37. Project Links
+GitHub Repository:
+https://github.com/bhavani8696/order-to-cash-orchestrator
 
-### GitHub Repository
+Backend API:
+https://order-to-cash-orchestrator.onrender.com
 
-[https://github.com/bhavani8696/order-to-cash-orchestrator](https://github.com/bhavani8696/order-to-cash-orchestrator)
+API Documentation:
+https://order-to-cash-orchestrator.onrender.com/docs
 
-### Live Frontend
-
-[https://order-to-cash-frontend.onrender.com](https://order-to-cash-frontend.onrender.com)
-
-### Live Backend
-
-[https://order-to-cash-orchestrator.onrender.com](https://order-to-cash-orchestrator.onrender.com)
-
-### Swagger API Documentation
-
-[https://order-to-cash-orchestrator.onrender.com/docs
+Frontend:
+https://order-to-cash-frontend.onrender.com
 
 
 
