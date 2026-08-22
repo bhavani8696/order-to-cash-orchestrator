@@ -25,7 +25,7 @@
 
     <main>
 
-        <!-- Order Input -->
+        <!-- ORDER FORM -->
         <section class="card order-card">
 
             <div class="section-heading">
@@ -39,45 +39,42 @@
             <div class="form-grid">
 
                 <div class="input-group">
-                    <label>Order ID</label>
+                    <label for="orderId">Order ID</label>
                     <input id="orderId" value="ORD-1001">
                 </div>
 
                 <div class="input-group">
-                    <label>Customer Name</label>
+                    <label for="customerName">Customer Name</label>
                     <input id="customerName" value="John Doe">
                 </div>
 
                 <div class="input-group">
-                    <label>Customer Email</label>
+                    <label for="customerEmail">Customer Email</label>
                     <input id="customerEmail" value="john@example.com">
                 </div>
 
             </div>
 
             <button class="process-btn" onclick="processOrder()">
-                <span>▶</span>
-                Process Order
+                <span>▶</span> Process Order
             </button>
 
         </section>
 
 
-        <!-- Result -->
+        <!-- RESULT -->
         <section id="result" class="hidden">
 
-            <!-- Status -->
+            <!-- STATUS -->
             <section class="card status-card">
 
                 <div>
                     <span class="eyebrow">PROCESSING RESULT</span>
 
-                    <h2 id="orderStatus">
-                        🟢 ORDER COMPLETED
-                    </h2>
+                    <h2 id="orderStatus">ORDER PROCESSING</h2>
 
                     <p id="orderMessage">
-                        Order processed successfully.
+                        Processing order through AI agents...
                     </p>
                 </div>
 
@@ -89,7 +86,7 @@
             </section>
 
 
-            <!-- Agent Pipeline -->
+            <!-- AGENT PIPELINE -->
             <section class="card">
 
                 <div class="section-heading">
@@ -102,64 +99,93 @@
 
                 <div class="pipeline">
 
+
+                    <!-- VALIDATION -->
                     <div class="agent-card">
-                        <div class="agent-icon">✓</div>
+
+                        <div class="agent-icon" id="validationIcon">
+                            ✓
+                        </div>
 
                         <h3>Validation Agent</h3>
 
-                        <p>Validates customer and order information.</p>
+                        <p>
+                            Validates customer and order information.
+                        </p>
 
-                        <span class="passed">
+                        <span class="passed" id="validationStatus">
                             PASSED
                         </span>
+
                     </div>
 
 
                     <div class="arrow">→</div>
 
 
+                    <!-- INVENTORY -->
                     <div class="agent-card">
-                        <div class="agent-icon">✓</div>
+
+                        <div class="agent-icon" id="inventoryIcon">
+                            ✓
+                        </div>
 
                         <h3>Inventory Agent</h3>
 
-                        <p>Checks product availability and quantity.</p>
+                        <p>
+                            Checks product availability and quantity.
+                        </p>
 
-                        <span class="passed">
+                        <span class="passed" id="inventoryStatus">
                             PASSED
                         </span>
+
                     </div>
 
 
                     <div class="arrow">→</div>
 
 
+                    <!-- INVOICE -->
                     <div class="agent-card">
-                        <div class="agent-icon">✓</div>
+
+                        <div class="agent-icon" id="invoiceIcon">
+                            ✓
+                        </div>
 
                         <h3>Invoice Agent</h3>
 
-                        <p>Generates the customer invoice.</p>
+                        <p>
+                            Generates the customer invoice.
+                        </p>
 
-                        <span class="passed">
+                        <span class="passed" id="invoiceStatus">
                             PASSED
                         </span>
+
                     </div>
 
 
                     <div class="arrow">→</div>
 
 
+                    <!-- PAYMENT RISK -->
                     <div class="agent-card">
-                        <div class="agent-icon">✓</div>
+
+                        <div class="agent-icon" id="paymentIcon">
+                            ✓
+                        </div>
 
                         <h3>Payment Risk Agent</h3>
 
-                        <p>Evaluates payment and transaction risk.</p>
+                        <p>
+                            Evaluates payment and transaction risk.
+                        </p>
 
                         <span class="risk" id="risk">
                             LOW RISK
                         </span>
+
                     </div>
 
                 </div>
@@ -167,27 +193,35 @@
             </section>
 
 
-            <!-- Summary -->
+            <!-- SUMMARY -->
             <section class="summary-grid">
 
                 <div class="summary-card">
                     <span>ORDER ID</span>
-                    <strong id="summaryOrderId">ORD-1001</strong>
+                    <strong id="summaryOrderId">
+                        ORD-1001
+                    </strong>
                 </div>
 
                 <div class="summary-card">
                     <span>STATUS</span>
-                    <strong id="summaryStatus">COMPLETED</strong>
+                    <strong id="summaryStatus">
+                        COMPLETED
+                    </strong>
                 </div>
 
                 <div class="summary-card">
                     <span>AGENTS EXECUTED</span>
-                    <strong>4 / 4</strong>
+                    <strong id="agentsExecuted">
+                        4 / 4
+                    </strong>
                 </div>
 
                 <div class="summary-card">
                     <span>PAYMENT RISK</span>
-                    <strong id="summaryRisk">LOW</strong>
+                    <strong id="summaryRisk">
+                        LOW
+                    </strong>
                 </div>
 
             </section>
