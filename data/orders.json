@@ -1,0 +1,22 @@
+[
+  {
+    "order_id": "ORD-1001",
+    "customer_name": "ABC Retail",
+    "customer_email": "abc@example.com",
+    "items": [
+      {
+        "product_id": "P001",
+        "product_name": "Laptop",
+        "quantity": 2,
+        "unit_price": 75000
+      },
+      {
+        "product_id": "P002",
+        "product_name": "Wireless Mouse",
+        "quantity": 5,
+        "unit_price": 1200
+      }
+    ],
+    "payment_method": "credit_card"
+  }
+]

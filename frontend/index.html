@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-to-Cash AI Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Order-to-Cash AI Orchestrator</h1>
+            <p>AI-powered multi-agent order processing system</p>
+        </header>
+
+        <section class="order-card">
+            <h2>Process Order</h2>
+
+            <input id="orderId" placeholder="Order ID" value="ORD-1001">
+            <input id="customerName" placeholder="Customer Name" value="John Doe">
+            <input id="customerEmail" placeholder="Customer Email" value="john@example.com">
+
+            <button onclick="processOrder()">Process Order</button>
+        </section>
+
+        <section id="result" class="result hidden">
+
+            <div class="status">
+                <h2 id="orderStatus">Order Status</h2>
+                <p id="orderMessage"></p>
+            </div>
+
+            <div class="agents">
+
+                <div class="agent">
+                    <h3>Validation Agent</h3>
+                    <span>✅ PASSED</span>
+                </div>
+
+                <div class="agent">
+                    <h3>Inventory Agent</h3>
+                    <span>✅ PASSED</span>
+                </div>
+
+                <div class="agent">
+                    <h3>Invoice Agent</h3>
+                    <span>✅ PASSED</span>
+                </div>
+
+                <div class="agent">
+                    <h3>Payment Risk Agent</h3>
+                    <span id="risk">LOW RISK</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
