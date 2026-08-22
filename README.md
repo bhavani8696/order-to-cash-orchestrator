@@ -31,8 +31,29 @@ This project implements the workflow using a **multi-agent architecture**.
 A central **Order Orchestrator** coordinates multiple specialized agents.
 
 ---
+.
 
-# 🎯 2. Project Objective
+# 🔗 37. Project Links
+
+### GitHub Repository
+
+[https://github.com/bhavani8696/order-to-cash-orchestrator](https://github.com/bhavani8696/order-to-cash-orchestrator)
+
+### Live Frontend
+
+[https://order-to-cash-frontend.onrender.com](https://order-to-cash-frontend.onrender.com)
+
+### Live Backend
+
+[https://order-to-cash-orchestrator.onrender.com](https://order-to-cash-orchestrator.onrender.com)
+
+### Swagger API Documentation
+
+[https://order-to-cash-orchestrator.onrender.com/docs
+
+
+
+# 🎯  Project Objective
 
 The main objective of this project is to build an automated Order-to-Cash workflow using a multi-agent architecture.
 
@@ -53,7 +74,7 @@ The system should:
 
 ---
 
-# 🔄 3. Complete Project Workflow
+# 🔄 Complete Project Workflow
 
 The overall workflow is:
 
@@ -89,11 +110,11 @@ The overall workflow is:
 
 ---
 
-# 🤖 4. Multi-Agent Architecture
+# 🤖  Multi-Agent Architecture
 
 The project contains a central orchestrator and four specialized agents.
 
-## 4.1 Order Orchestrator
+##  Order Orchestrator
 
 The Order Orchestrator is the central controller of the system.
 
@@ -114,7 +135,7 @@ The orchestrator ensures that agents execute in the correct order.
 
 ---
 
-# 4.2 Validation Agent
+#  Validation Agent
 
 The Validation Agent verifies whether the submitted sales order contains valid information.
 
@@ -148,7 +169,7 @@ VALIDATION PASSED
 
 ---
 
-# 4.3 Inventory Agent
+#  Inventory Agent
 
 The Inventory Agent checks whether the requested product quantity is available.
 
@@ -192,7 +213,7 @@ When inventory fails, the remaining agents are not executed.
 
 ---
 
-# 4.4 Invoice Agent
+#  Invoice Agent
 
 The Invoice Agent generates invoice-related information after successful validation and inventory verification.
 
@@ -212,7 +233,7 @@ Invoice PASSED
 
 ---
 
-# 4.5 Payment Risk Agent
+# Payment Risk Agent
 
 The Payment Risk Agent evaluates the payment risk associated with the order.
 
@@ -232,7 +253,7 @@ LOW RISK
 
 ---
 
-# 🏗️ 5. System Architecture
+# 🏗️ System Architecture
 
 The project follows a layered architecture.
 
@@ -263,7 +284,7 @@ The project follows a layered architecture.
 
 ---
 
-# 🛠️ 6. Technologies Used
+# 🛠️  Technologies Used
 
 ## Backend
 
@@ -299,7 +320,7 @@ The project follows a layered architecture.
 
 ---
 
-# 📁 7. Project Structure
+# 📁 Project Structure
 
 ```text
 order-to-cash-orchestrator/
@@ -352,7 +373,7 @@ order-to-cash-orchestrator/
 
 ---
 
-# 🧩 8. Important Backend Components
+# 🧩  Important Backend Components
 
 ## app/main.py
 
@@ -373,7 +394,7 @@ It contains:
 
 ---
 
-# 📦 9. Order Data Model
+# 📦  Order Data Model
 
 The sales order contains information such as:
 
@@ -398,7 +419,7 @@ The data is validated using **Pydantic models**.
 
 ---
 
-# 🌐 10. API Endpoints
+# 🌐  API Endpoints
 
 The backend exposes the following REST APIs.
 
@@ -496,7 +517,7 @@ Payment Risk
 
 ---
 
-# 🖥️ 11. Frontend Dashboard
+# 🖥️ Frontend Dashboard
 
 The project includes a web-based dashboard.
 
@@ -531,7 +552,7 @@ fetch(
 
 ---
 
-# 🔐 12. CORS Configuration
+# 🔐  CORS Configuration
 
 Because the frontend and backend are deployed separately, the backend must allow requests from the frontend.
 
@@ -553,7 +574,7 @@ This allows the deployed frontend to communicate with the deployed backend.
 
 ---
 
-# 💻 13. Running the Project Locally
+# 💻  Running the Project Locally
 
 ## Step 1: Clone the Repository
 
@@ -643,7 +664,7 @@ Expected response:
 
 ---
 
-# 📚 14. Swagger API Documentation
+# 📚  Swagger API Documentation
 
 FastAPI automatically provides interactive API documentation.
 
@@ -668,7 +689,7 @@ POST /process-order
 
 ---
 
-# 🌐 15. Running Frontend Locally
+# 🌐  Running Frontend Locally
 
 Open another terminal.
 
@@ -694,7 +715,7 @@ Open it in the browser.
 
 ---
 
-# 🧪 16. Testing the Complete Workflow
+# 🧪  Testing the Complete Workflow
 
 Enter sample data:
 
@@ -719,7 +740,7 @@ The orchestrator starts the agent pipeline.
 
 ---
 
-# 🔄 17. Successful Processing Flow
+# 🔄  Successful Processing Flow
 
 For a valid order:
 
@@ -747,7 +768,7 @@ ORDER COMPLETED
 
 ---
 
-# 🟢 18. Successful Output
+# 🟢  Successful Output
 
 The dashboard displays:
 
@@ -787,7 +808,7 @@ PAYMENT RISK    LOW
 
 ---
 
-# ❌ 19. Failure Handling
+# ❌  Failure Handling
 
 The project also handles agent failures.
 
@@ -819,7 +840,7 @@ The Invoice Agent and Payment Risk Agent are not executed.
 
 ---
 
-# 🔴 20. Failure Output
+# 🔴  Failure Output
 
 The frontend displays:
 
@@ -859,7 +880,7 @@ This demonstrates controlled failure handling in the multi-agent architecture.
 
 ---
 
-# 📝 21. Logging
+# 📝  Logging
 
 The project contains a logging service.
 
@@ -889,7 +910,7 @@ Payment Risk Agent
 
 ---
 
-# 🐳 22. Docker Support
+# 🐳  Docker Support
 
 The project includes a Dockerfile.
 
@@ -915,7 +936,7 @@ http://localhost:8000
 
 ---
 
-# 🐳 23. Docker Compose
+# 🐳  Docker Compose
 
 The project also includes:
 
@@ -937,7 +958,7 @@ docker compose down
 
 ---
 
-# ☸️ 24. Kubernetes Support
+# ☸️  Kubernetes Support
 
 The project contains Kubernetes configuration files:
 
@@ -953,7 +974,7 @@ The service exposes the application to other components or external clients depe
 
 ---
 
-# ☁️ 25. Terraform Support
+# ☁️  Terraform Support
 
 The project also includes:
 
@@ -968,7 +989,7 @@ It allows infrastructure configuration to be maintained as code instead of manua
 
 ---
 
-# 🔄 26. Git and GitHub Workflow
+# 🔄  Git and GitHub Workflow
 
 Git was used for version control.
 
@@ -996,7 +1017,7 @@ The project source code is hosted on GitHub.
 
 ---
 
-# ☁️ 27. Cloud Deployment
+# ☁️  Cloud Deployment
 
 The application was deployed using **Render**.
 
@@ -1010,7 +1031,7 @@ Backend → Render Web Service
 
 ---
 
-# 🚀 28. Backend Deployment
+# 🚀  Backend Deployment
 
 The FastAPI backend was deployed as a Render Web Service.
 
@@ -1032,7 +1053,7 @@ After deployment, the backend becomes publicly accessible.
 
 ---
 
-# 🌐 29. Frontend Deployment
+# 🌐  Frontend Deployment
 
 The frontend was deployed as a Render Static Site.
 
@@ -1050,23 +1071,8 @@ The deployed frontend communicates with the deployed FastAPI backend using the b
 
 ---
 
-# 🔗 30. Live Project Links
 
-## 🖥️ Frontend
-
-[https://order-to-cash-frontend.onrender.com](https://order-to-cash-frontend.onrender.com)
-
-## 🔗 Backend API
-
-[https://order-to-cash-orchestrator.onrender.com](https://order-to-cash-orchestrator.onrender.com)
-
-## 📚 API Documentation
-
-[https://order-to-cash-orchestrator.onrender.com/docs](https://order-to-cash-orchestrator.onrender.com/docs)
-
----
-
-# 🧪 31. End-to-End Testing
+# 🧪  End-to-End Testing
 
 The complete application was tested by:
 
@@ -1099,7 +1105,7 @@ Agents Executed        4 / 4
 
 ---
 
-# 📊 32. Final System Flow
+# 📊 Final System Flow
 
 The final deployed system works as follows:
 
@@ -1136,7 +1142,7 @@ The final deployed system works as follows:
 
 ---
 
-# ⭐ 33. Key Features
+# ⭐ Key Features
 
 * Multi-agent architecture
 * Central order orchestration
@@ -1161,7 +1167,7 @@ The final deployed system works as follows:
 
 ---
 
-# 🎓 34. What I Learned From This Project
+# 🎓  What I Learned From This Project
 
 Through this project, I gained practical experience in:
 
@@ -1187,7 +1193,7 @@ Through this project, I gained practical experience in:
 
 ---
 
-# 🚀 35. Future Enhancements
+# 🚀  Future Enhancements
 
 The project can be extended with additional features such as:
 
@@ -1209,7 +1215,7 @@ The project can be extended with additional features such as:
 
 ---
 
-# 🏁 36. Conclusion
+# 🏁 Conclusion
 
 The **Order-to-Cash AI Orchestrator** demonstrates how a traditional business workflow can be automated using a multi-agent architecture.
 
@@ -1250,23 +1256,7 @@ The application is successfully deployed with a public frontend and backend, mak
 
 ---
 
-# 🔗 37. Project Links
-
-### GitHub Repository
-
-[https://github.com/bhavani8696/order-to-cash-orchestrator](https://github.com/bhavani8696/order-to-cash-orchestrator)
-
-### Live Frontend
-
-[https://order-to-cash-frontend.onrender.com](https://order-to-cash-frontend.onrender.com)
-
-### Live Backend
-
-[https://order-to-cash-orchestrator.onrender.com](https://order-to-cash-orchestrator.onrender.com)
-
-### Swagger API Documentation
-
-[https://order-to-cash-orchestrator.onrender.com/docs](https://order-to-cash-orchestrator.onrender.com/docs)
+](https://order-to-cash-orchestrator.onrender.com/docs)
 
 ---
 
